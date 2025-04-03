@@ -1,0 +1,696 @@
+:root{
+    --color-dark: #333;
+    --color-light: #fff;
+    --color-light-2: #fff;
+    --bg-header: #161616;
+    --color-denger: #f2272f;
+    --color-primary: #4390f8;
+    --color-success: #38c338;
+    --coler-warning: #f9a62b;
+    --color-secondary: #555;
+    --linear-gradient-overlay:linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 60%, black 100%);
+    --default-font-family: "Koulen", serif;
+    --box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--color-light);
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: var(--default-font-family);
+}
+/*<!--ដាក់ឱ្យផ្ទៃពេញ-->*/
+.container-fluid{
+    width: 100%;
+   
+}
+/*<!--ដាក់ផ្ទៃbackgroundឱ្យពេញ​ នៅលើគេ និងធ្វើឱ្យlogo នៅកណ្ដាល-->*/
+.container-fluid> .header{
+    width: 100%;
+    background-color: var(--bg-header);
+    display: flex;
+    justify-content: center;/*ធ្វើឱ្យlogo នៅកណ្ដាល*/
+}
+.container-fluid> .header> .content,
+.container-fluid> .nav> .content,
+/*ទំហំផ្ទៃត្រឹម7០%*/
+.container-fluid> .container> .content{
+    width: 70%;   
+}
+.container-fluid> .header> .content{
+    display: flex;
+    align-items: center;/*រូបនៅស្មើគ្នាតាមជួរដេក*/
+    justify-content: space-between;/*ផ្ដាច់រូបពីគ្នា*/
+    padding: 8px 5px 3px;/*បន្ថែមចន្លោះelement(header)*/
+}
+.container-fluid> .header> .content> .logo> a img {
+    width: 80px;/*ដាក់ទំហំlogo*/
+}
+.container-fluid> .nav{
+    width: 100%;
+    background-color: var(--color-denger);
+    display: flex;              /*មីនុយនៅកណ្ដាល តាមជួរដេក*/
+    justify-content: center; 
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+}
+.container-fluid> .nav> .content ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-success);
+    list-style-type: none;
+    
+}
+.container-fluid> .nav> .content ul li a{
+    display: block;
+    padding: 10px 17px;
+    font-size: 18px;
+    color: var(--color-light);
+    transition: all 0.2s;
+    text-decoration: none;
+    font-family: Kh Koulen;
+}
+.container-fluid> .nav> .content ul li a:hover{
+    color: rgb(10, 86, 227);
+}
+.container-fluid> .nav> .content ul li a.active{
+   background-color: var(--color-secondary)
+}
+.container-fluid> .container> .content{
+    display: flex;
+    align-items: center;  
+    gap: 10px;
+    margin: 16px 0px;
+}
+.container-fluid> .container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.container-fluid> .container> .content> .content_left{
+    width: 78%;
+    background-color: var(--coler-warning);
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: repeat(2,254px);
+}
+.container-fluid> .container> .content> .content_left> a img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container-fluid> .container> .content> .content_left> a > .overlay{
+    background: var(--linear-gradient-overlay);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.35;
+    transition: all 0.3s;
+    z-index: 5;
+}
+.container-fluid> .container> .content> .content_left> a:hover> .overlay{
+    opacity: 0.8;
+}
+.container-fluid> .container> .content> .content_left> a{
+    position: relative;
+}
+.container-fluid> .container> .content> .content_left> a > .flag{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    padding: 1px 12px;
+    z-index: 6;
+}
+.container-fluid> .container> .content> .content_left> a:nth-child(1) > .flag,
+.container-fluid> .container> .content> .content_left> a:nth-child(4) > .flag{
+    background-color: pink;
+}
+.container-fluid> .container> .content> .content_left> a:nth-child(2) > .flag,
+.container-fluid> .container> .content> .content_left> a:nth-child(3) > .flag{
+        background-color: var(--coler-warning);
+}
+.container-fluid> .container> .content> .content_left> a> .text_content{
+    position: absolute;
+    bottom: 28px;
+    left: 15px;
+    color: var(--color-light);
+    font-family: khmer os battambang;
+    font-size: 12.5px;
+    z-index: 6;
+    transition: all 0.3s linear;
+}
+ .container-fluid> .container> .content> .content_left> a> .text_content> .description{
+    font-size: 12px;
+    transition: all 0.3s linear;
+    opacity: 0;
+    visibility: hidden;
+ }
+ .container-fluid> .container> .content> .content_left> a:hover .text_content> .description{
+    opacity: 1;
+    visibility: visible;
+ }
+ .container-fluid> .container> .content> .content_left> a:hover .text_content{
+    bottom: 60px;
+ }
+.container-fluid> .container> .content> .content_left> a> .time{
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    color: rgb(243, 251, 4);
+    font-size: 12px;
+    z-index: 6;
+}
+.container-fluid> .container> .content> .content_left> a:hover .text_content> .title{
+    color: red;
+}
+
+/*New css*/
+.container-fluid> .container> .content> .content_right{
+    width: 22%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2,250.50px);
+    gap: 6px;   
+}
+.container-fluid> .container> .content> .content_right> a img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.container>.content_video>.flag{
+    background-color: var(--color-denger);
+    color: var(--color-light);
+    padding: 7px 28px 7px 13px;
+    text-decoration: none;
+    position: relative;
+}
+.container>.content_video>.flag::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -20px;
+    border-width: 40px 0px 0px 20px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--color-denger);
+}
+.container>.content_video{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.container>.content_video>.small_content{
+    width: 100%;
+    box-shadow: var(--box-shadow);
+    border-top: 3px solid var(--color-denger);
+}
+.container>.content_video>.small_content>.top_small_content{
+    display: grid;
+    grid-template-columns: repeat(3,33.20%);
+    grid-column-gap: 0.25%;
+    padding: 17px 25px;
+    
+}
+.container>.content_video>.small_content>.top_small_content>a>div>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: all 0.1s linear;
+}
+.container>.content_video>.small_content>.top_small_content>a>div{
+    width: 100%;
+    height: 195px;  
+    background-color: var(--bg-header);
+}
+.container>.content_video{
+    width: 70%;
+}
+.container>.content_video>.small_content>.top_small_content>a>div:hover>img{
+    transform: scale(0.97);
+}
+.container>.content_video>.small_content>.top_small_content>a>h4{
+    font-family: khmer os battambang;
+    color: var(--bg-header);
+}
+.container>.content_video>.small_content>.top_small_content>a{
+    text-decoration: none;
+    display: block;
+}
+.container>.content_video>.small_content>.bottom_small_content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.container>.content_video>.small_content>.bottom_small_content>.bottom_left{
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(4,24.5%);
+    grid-column-gap: 1.5%;
+    padding: 0px 25px;
+}
+.container>.content_video>.small_content>.bottom_small_content>.bottom_left>a>div{
+    width: 100%;
+    height: 120px;
+}
+.container>.content_video>.small_content>.bottom_small_content>.bottom_left>a>div>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.container>.content_video>.small_content>.bottom_small_content>.bottom_left>a{
+    color: var(--bg-header);
+    font-family: Khmer os battambang;
+    font-size: 13px;
+    text-decoration: none;
+}
+.container>.content_video>.small_content>.bottom_small_content>.bottom_left>a>div>img:hover{
+    transform: scale(0.97);
+}
+.container>.content_video>.small_content>.bottom_small_content>.bottom_right{
+    width: 30%;
+    display: grid;
+    grid-template-columns: repeat(1,100%);
+    padding: 0px 25px 0px 0px;
+}
+.container>.content_video>.small_content>.bottom_small_content>.bottom_right>a>div{
+    width: 100%;
+    height: 126.5px;
+}
+.container>.content_video>.small_content>.bottom_small_content>.bottom_right>a>div>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.container>.content_video>.small_content>.bottom_small_content>.bottom_right>a{
+    text-decoration: none;
+}
+.container>.content_video>.small_content>.bottom_small_content>.bottom_right>a>p{
+    font-size: 14px;
+    
+}
+/*New code*/
+.container>.content_game>.entertainment_content{
+    width: 100%;
+    margin-top: 7px;
+    padding: 0px 25px;
+    box-shadow: var(--box-shadow);
+    border-top: 3px solid var(--color-success)
+}
+.container>.content_game{
+    margin-top: 30px;
+}
+
+.container>.content_game>.entertainment_content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;  
+}
+
+.container>.content_game>.flag{
+    background-color: var(--color-success);
+    padding: 7px 28px 7px 13px;
+    position: relative;
+    text-decoration: none;
+    color: var(--color-light);
+
+}
+.container>.content_game>.flag::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -20px;
+    border-width: 42px 0px 0px 20px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--color-success);
+
+}
+
+.container>.content_game>.entertainment_content>.entertainment_left{
+    width: 30%;
+
+}
+.container>.content_game>.entertainment_content>.entertainment_left>a>div{
+    width: 100%;
+    height: 270px;
+    margin-top: 22px;
+    background-color: var(--bg-header);
+}
+.container>.content_game>.entertainment_content>.entertainment_left>a>div>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; 
+}
+.container>.content_game>.entertainment_content>.entertainment_left>a>h2{
+    background-color: pink;
+}
+.container>.content_game>.entertainment_content>.entertainment_left>a{
+    text-decoration: none;
+    transition: all 1s linear;
+    
+}
+.container>.content_game>.entertainment_content>.entertainment_left>a>div:hover>img{
+    transform: scale(0.97);
+}
+/**/
+
+.container>.content_game>.entertainment_content>.entertainment_right{
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(4,24.5%);
+    grid-column-gap: 1.5%;
+    padding: 0px 16.5px 0px 0px;
+    /*background-color: #f2272f;*/
+    margin-top: 2px;
+}
+.container>.content_game>.entertainment_content>.entertainment_right>a>div{
+    width: 100%;
+    height: 120px;
+}
+.container>.content_game>.entertainment_content>.entertainment_right>a>div>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.container>.content_game>.entertainment_content>.entertainment_right>a{
+    color: var(--bg-header);
+    font-family: Khmer os battambang;
+    font-size: 13px;
+    text-decoration: none;
+}
+.container>.content_game>.entertainment_content>.entertainment_right>a>div>img:hover{
+    transform: scale(0.97);
+}
+.container>.content_game{
+    width: 70%;
+}
+/*8888*/
+.container>.content_Ai{
+    width: 70%;
+    margin-top: 30px;
+}
+.container>.content_Ai>a{
+    text-decoration: none;
+}
+.container>.content_Ai>.flag{
+    background-color: var(--coler-warning);
+    padding: 7px 21px 7px 15px;
+    position: relative; 
+    color: var(--color-light);
+}
+.container>.content_Ai>.flag::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -20px;
+    border-style: solid;
+    border-width: 42px 0px 0px 20px;
+    border-color: transparent transparent transparent var(--coler-warning);
+}
+.container>.content_Ai>.technology_content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: var(--box-shadow);
+    border-top: 3px solid var(--coler-warning);
+    padding: 0px 40px 0px 25px;
+    margin-top: 8px;
+}
+.container>.content_Ai>.technology_content>.technology_left>a>h2{
+    background-color: #cb89c8;
+}
+.container>.content_Ai>.technology_content>.technology_left>a>div{
+    width: 100%;
+    height: 270px;
+    margin-top: 2px;
+    background-color: var(--bg-header);
+    transition: all 0.1s linear;
+}
+.container>.content_Ai>.technology_content>.technology_left>a>div>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.container>.content_Ai>.technology_content>.technology_left>a{
+    text-decoration: none;
+}
+.container>.content_Ai>.technology_content>.technology_left>a>div:hover>img{
+    transform: scale(0.97);
+}
+.container>.content_Ai>.technology_content>.technology_left{
+    width: 30%; 
+    margin-top: 20px;
+}
+.container>.content_Ai>.technology_content>.technology_right{
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(4,24.5%);
+    grid-column-gap: 1.5%;
+    margin-top: -8px;  
+}
+.container>.content_Ai>.technology_content>.technology_right>a>div{
+    width: 100%;
+    height: 120px;   
+}
+.container>.content_Ai>.technology_content>.technology_right>a>div>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;   
+}
+.container>.content_Ai>.technology_content>.technology_right>a>div:hover>img{
+    transform: scale(0.97);
+}
+.container>.content_Ai>.technology_content>.technology_right>a{
+    text-decoration: none;
+    font-family: khmer os battambang;
+    color: var(--bg-header);
+    font-size: 12px;
+}
+/**/
+.container>.content_digital{
+    width: 70%;
+    margin-top: 35px;
+}
+.container>.content_digital>a{
+    text-decoration: none;
+}
+.container>.content_digital>.flag{
+    background-color: blue;
+    padding: 8px 25px 8px 13px;
+    color: var(--color-light);
+    position: relative;
+}
+.container>.content_digital>.flag::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -20px;
+    border-style: solid;
+    border-width: 45px 0px 0px 20px;
+    border-color: transparent transparent transparent blue;
+}
+.container>.content_digital>.life_society_content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: var(--box-shadow);
+    border-top: 3px solid blue;
+    padding: 22px 41.5px 0px 25px;
+    margin-top: 8.5px;                                 
+}
+.container>.content_digital>.life_society_content>.life_society_left>a{
+    text-decoration: none;
+}
+.container>.content_digital>.life_society_content>.life_society_left>a>div>img:hover{
+    transform: scale(0.97);
+}
+.container>.content_digital>.life_society_content>.life_society_left{
+    width: 30%;
+    
+}
+.container>.content_digital>.life_society_content>.life_society_left>a>div{
+    width: 100%;
+    height: 270px;
+}
+.container>.content_digital>.life_society_content>.life_society_left>a>div>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.container>.content_digital>.life_society_content>.life_society_right{
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(4,24.5%);
+    grid-column-gap: 1.5%;
+}
+.container>.content_digital>.life_society_content>.life_society_right>a{
+    text-decoration: none;
+    font-family: khmer os battambang;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--bg-header);
+}
+.container>.content_digital>.life_society_content>.life_society_right>a>div>img:hover{
+    transform: scale(0.97);
+}
+.container>.content_digital>.life_society_content>.life_society_right>a>div{
+    width: 100%;
+    height: 120px;
+}
+.container>.content_digital>.life_society_content>.life_society_right>a>div>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+/*???*/
+.container>.content_sports{
+    width: 70%;
+    margin-top: 30px;
+}
+.container>.content_sports>.flag{
+    text-decoration: none;
+}
+.container>.content_sports>.flag{
+    background-color: yellow;
+    padding: 7px 27px 7px 16px;
+    position: relative;
+}
+.container>.content_sports>.flag::after{
+    content: " ";
+    position: absolute;
+    top: 0px;
+    right: -20px;
+    border-style: solid;
+    border-width: 44px 0px 0px 20px;
+    border-color: transparent transparent transparent yellow;
+   
+}
+
+.container>.content_sports>.sports{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,18.40%);
+    grid-column-gap: 2%;
+    box-shadow: var(--box-shadow);
+    padding: 20px 24px 0px 24px;
+    border-top: 3px solid yellow;
+    margin-top: 8px;
+}
+.container>.content_sports>.sports>a>div{
+    width: 100%;
+    height: 136.5px;
+}
+.container>.content_sports>.sports>a>div>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.container>.content_sports>.sports>a>div>img:hover{
+    transform: scale(0.98);
+}
+.container>.content_sports>.sports>a{
+    text-decoration: none;
+}
+.container>.content_sports>.sports>a>p{
+    font-family: khmer os battambang;
+    font-size: 12.5px;
+    font-weight: bold;
+}
+.container>.content_sports>.sports>a>p:hover{
+    color: blue;
+}
+
+.footer>.content{
+    width: 100%;
+    background-color: var(--bg-header);
+    margin-top: 45px;
+    color: #bbb9b9;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3,22.7%);
+    grid-column-gap: 1%;
+    padding-top: 35px;
+    font-family: khmer os battambang;
+    font-size: 13.5px;
+    line-height: 2;
+}
+.footer>.content>.left{
+    width: 70%; 
+}
+.footer>.content>.left>a{
+    color: blue;
+}
+.footer>.content>.left>img{
+    width: 50%;
+    height: 60px;
+    object-fit: cover;
+}
+.footer>.content>.center{
+    width: 90%;
+}
+.footer>.content>.center>div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,20%);
+    align-items: center;
+}
+.footer>.content>.center>div>img{
+    width: 40px;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.footer>.content>.right{
+    width: 70%; 
+    margin-left: 40px;
+}
+.footer>.content>.right>div>p{
+    font-family: Times New Roman;
+    font-size: 15px;
+}
+/*
+.footer{
+    width: 100%;
+   display: flex;
+   justify-content: center;
+   ...
+}
+.footer>.content{
+    display: flex;
+    justify-content: space-between;
+    ...
+}
+...
+*/
+
+
+
+
+
+
+
+
+
